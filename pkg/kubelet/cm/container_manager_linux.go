@@ -223,7 +223,7 @@ func (cm *containerManagerImpl) setupNode() error {
 		cm.status.SoftRequirements = fmt.Errorf("CPU hardcapping unsupported")
 	}
 	// TODO: plumb kernel tunable options into container manager, right now, we modify by default
-	if err := setupKernelTunables(KernelTunableModify); err != nil {
+	if err := setupKernelTunables(KernelTunableWarn); err != nil {
 		return err
 	}
 
